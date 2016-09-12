@@ -13,9 +13,11 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
-        _background = [[UIImageView alloc] init];
+        _background           = [[UIImageView alloc] init];
         //默认放大倍率1.1
-        _multiple   = _multiple ? : 1.1;
+        _multiple             = 1.1;
+        //默认全方向移动
+        _perspectiveDirection = PerspectiveDirectionAll;
         [self addSubview:_background];
     }
     return self;
@@ -30,12 +32,18 @@
 
 - (void)settingMultple:(CGFloat)multiple {
     
-    //检查放大倍数
+    //检查放大倍率
     _multiple = multiple >= 1 && multiple <=3 ? multiple : 1;
     _background.bounds = CGRectMake(0, 0, self.frame.size.width * _multiple, self.frame.size.height * _multiple);
 }
 
+- (void)settingPerspectiveDirection:(PerspectiveDirection)mode {
+    
+    _perspectiveDirection = mode;
+}
+
 - (void)enablePerspective {
+    
     _processor = [[MotionProcessor alloc] init];
     [_processor startDeviceMotionWithBlock:^(CGFloat x, CGFloat y, CGFloat z) {
         
@@ -43,13 +51,28 @@
                                        delay:0
                                      options:UIViewKeyframeAnimationOptionCalculationModeDiscrete
                                   animations:^{
-                                      [self horizontalShift:y];
-                                      [self verticalShift:x];
+                                      switch (_perspectiveDirection) {
+                                          case PerspectiveDirectionHorizontalOnly:
+                                              [self horizontalShift:y];
+                                              break;
+                                          case PerspectiveDirectionVerticalOnly:
+                                              [self verticalShift:x];
+                                              break;
+                                          case PerspectiveDirectionAll:
+                                              [self horizontalShift:y];
+                                              [self verticalShift:x];
+                                              break;
+                                      }
                                   }
                                   completion:nil];
     }];
 }
 
+/**
+ *  图片水平移动的相关计算
+ *
+ *  @param y DeviceMotion传入的相关Y轴数据
+ */
 - (void)horizontalShift:(CGFloat)y {
     
     CGFloat horizontalShiftSpeed = (_background.frame.size.width - self.frame.size.width) / 100;
@@ -72,6 +95,11 @@
     }
 }
 
+/**
+ *  图片垂直移动的相关计算
+ *
+ *  @param x DeviceMotion传入的相关X轴数据
+ */
 - (void)verticalShift:(CGFloat)x {
     
     CGFloat verticalShiftSpeed = (_background.frame.size.height - self.frame.size.height) / 100;

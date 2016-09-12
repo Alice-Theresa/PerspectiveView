@@ -23,12 +23,14 @@
 @property (nonatomic, readonly, strong) NSOperationQueue *queue;
 
 /**
- *  视图更新Block
+ *  更新视图方法的Block
  */
 @property (nonatomic, readonly, copy) void(^deviceMotionBlock)(CGFloat x, CGFloat y , CGFloat z);
 
 /**
  *  开启DeviceMotion
+ *
+ *  @param block 更新视图方法的Block
  */
 - (void)startDeviceMotionWithBlock:(void(^)(CGFloat x, CGFloat y , CGFloat z))block;
 
