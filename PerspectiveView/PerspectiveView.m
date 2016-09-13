@@ -44,28 +44,30 @@
 
 - (void)enablePerspective {
     
-    _processor = [[MotionProcessor alloc] init];
-    [_processor startDeviceMotionWithBlock:^(CGFloat x, CGFloat y, CGFloat z) {
-        
-        [UIView animateKeyframesWithDuration:0.1
-                                       delay:0
-                                     options:UIViewKeyframeAnimationOptionCalculationModeDiscrete
-                                  animations:^{
-                                      switch (_perspectiveDirection) {
-                                          case PerspectiveDirectionHorizontalOnly:
-                                              [self horizontalShift:y];
-                                              break;
-                                          case PerspectiveDirectionVerticalOnly:
-                                              [self verticalShift:x];
-                                              break;
-                                          case PerspectiveDirectionAll:
-                                              [self horizontalShift:y];
-                                              [self verticalShift:x];
-                                              break;
+    if (!_processor.manager.deviceMotionActive) {
+        _processor = [[MotionProcessor alloc] init];
+        [_processor startDeviceMotionWithBlock:^(CGFloat x, CGFloat y, CGFloat z) {
+            
+            [UIView animateKeyframesWithDuration:0.1
+                                           delay:0
+                                         options:UIViewKeyframeAnimationOptionCalculationModeDiscrete
+                                      animations:^{
+                                          switch (_perspectiveDirection) {
+                                              case PerspectiveDirectionHorizontalOnly:
+                                                  [self horizontalShift:y];
+                                                  break;
+                                              case PerspectiveDirectionVerticalOnly:
+                                                  [self verticalShift:x];
+                                                  break;
+                                              case PerspectiveDirectionAll:
+                                                  [self horizontalShift:y];
+                                                  [self verticalShift:x];
+                                                  break;
+                                          }
                                       }
-                                  }
-                                  completion:nil];
-    }];
+                                      completion:nil];
+        }];
+    }
 }
 
 /**

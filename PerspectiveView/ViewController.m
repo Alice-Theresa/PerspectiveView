@@ -19,13 +19,13 @@
     
     [super viewDidLoad];
     
-    PerspectiveView *view = [[PerspectiveView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [view settingImage:[UIImage imageNamed:@"Image"]];
+    PerspectiveView *perspectiveView = [[PerspectiveView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [perspectiveView settingImage:[UIImage imageNamed:@"Image"]];
     //[view settingMultple:1.3];
     //[view settingPerspectiveDirection:PerspectiveDirectionHorizontalOnly];
-    [self.view addSubview:view];
+    [self.view addSubview:perspectiveView];
     
-    [view enablePerspective];
+    [perspectiveView enablePerspective];
 }
 
 @end
