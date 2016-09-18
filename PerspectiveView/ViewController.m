@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PerspectiveView.h"
+#import "SACPerspectiveView.h"
 
 @interface ViewController ()
 
@@ -19,10 +19,10 @@
     
     [super viewDidLoad];
     
-    PerspectiveView *perspectiveView = [[PerspectiveView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    SACPerspectiveView *perspectiveView = [[SACPerspectiveView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [perspectiveView settingImage:[UIImage imageNamed:@"Image"]];
-    //[view settingMultple:1.3];
-    //[view settingPerspectiveDirection:PerspectiveDirectionHorizontalOnly];
+    //[perspectiveView settingMultiple:1.3];
+    //[perspectiveView settingPerspectiveDirection:SACPerspectiveDirectionHorizontalOnly];
     [self.view addSubview:perspectiveView];
     
     [perspectiveView enablePerspective];

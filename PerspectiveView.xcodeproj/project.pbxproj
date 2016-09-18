@@ -13,8 +13,8 @@
 		76F936D51D8544EF00013271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F936D31D8544EF00013271 /* Main.storyboard */; };
 		76F936D71D8544EF00013271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F936D61D8544EF00013271 /* Assets.xcassets */; };
 		76F936DA1D8544EF00013271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F936D81D8544EF00013271 /* LaunchScreen.storyboard */; };
-		76F936E31D85452500013271 /* PerspectiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F936E21D85452500013271 /* PerspectiveView.m */; };
-		76F936E61D85453600013271 /* MotionProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F936E51D85453600013271 /* MotionProcessor.m */; };
+		76F936E31D85452500013271 /* SACPerspectiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F936E21D85452500013271 /* SACPerspectiveView.m */; };
+		76F936E61D85453600013271 /* SACMotionProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F936E51D85453600013271 /* SACMotionProcessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +28,10 @@
 		76F936D61D8544EF00013271 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76F936D91D8544EF00013271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76F936DB1D8544EF00013271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76F936E11D85452500013271 /* PerspectiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerspectiveView.h; sourceTree = "<group>"; };
-		76F936E21D85452500013271 /* PerspectiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerspectiveView.m; sourceTree = "<group>"; };
-		76F936E41D85453600013271 /* MotionProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionProcessor.h; sourceTree = "<group>"; };
-		76F936E51D85453600013271 /* MotionProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionProcessor.m; sourceTree = "<group>"; };
+		76F936E11D85452500013271 /* SACPerspectiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACPerspectiveView.h; sourceTree = "<group>"; };
+		76F936E21D85452500013271 /* SACPerspectiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACPerspectiveView.m; sourceTree = "<group>"; };
+		76F936E41D85453600013271 /* SACMotionProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACMotionProcessor.h; sourceTree = "<group>"; };
+		76F936E51D85453600013271 /* SACMotionProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACMotionProcessor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +68,10 @@
 				76F936CE1D8544EF00013271 /* AppDelegate.m */,
 				76F936D01D8544EF00013271 /* ViewController.h */,
 				76F936D11D8544EF00013271 /* ViewController.m */,
-				76F936E41D85453600013271 /* MotionProcessor.h */,
-				76F936E51D85453600013271 /* MotionProcessor.m */,
-				76F936E11D85452500013271 /* PerspectiveView.h */,
-				76F936E21D85452500013271 /* PerspectiveView.m */,
+				76F936E41D85453600013271 /* SACMotionProcessor.h */,
+				76F936E51D85453600013271 /* SACMotionProcessor.m */,
+				76F936E11D85452500013271 /* SACPerspectiveView.h */,
+				76F936E21D85452500013271 /* SACPerspectiveView.m */,
 				76F936D31D8544EF00013271 /* Main.storyboard */,
 				76F936D61D8544EF00013271 /* Assets.xcassets */,
 				76F936D81D8544EF00013271 /* LaunchScreen.storyboard */,
@@ -115,11 +115,12 @@
 		76F936BF1D8544EF00013271 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Kabylake;
 				TargetAttributes = {
 					76F936C61D8544EF00013271 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ARTH5X7FEM;
 					};
 				};
 			};
@@ -160,9 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F936D21D8544EF00013271 /* ViewController.m in Sources */,
-				76F936E31D85452500013271 /* PerspectiveView.m in Sources */,
+				76F936E31D85452500013271 /* SACPerspectiveView.m in Sources */,
 				76F936CF1D8544EF00013271 /* AppDelegate.m in Sources */,
-				76F936E61D85453600013271 /* MotionProcessor.m in Sources */,
+				76F936E61D85453600013271 /* SACMotionProcessor.m in Sources */,
 				76F936CC1D8544EF00013271 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,8 +204,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -248,8 +251,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -277,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ARTH5X7FEM;
 				INFOPLIST_FILE = PerspectiveView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kabylake.PerspectiveView;
@@ -288,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ARTH5X7FEM;
 				INFOPLIST_FILE = PerspectiveView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kabylake.PerspectiveView;
@@ -314,6 +321,7 @@
 				76F936E01D8544EF00013271 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

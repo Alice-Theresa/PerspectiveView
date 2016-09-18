@@ -1,5 +1,5 @@
 //
-//  MotionProcessor.h
+//  SACMotionProcessor.h
 //  PerspectiveView
 //
 //  Created by S.C. on 16/9/11.
@@ -10,22 +10,12 @@
 #import <CoreMotion/CoreMotion.h>
 #import <UIKit/UIKit.h>
 
-@interface MotionProcessor : NSObject
+@interface SACMotionProcessor : NSObject
 
 /**
- *  Motion管理
+ *  Motion管理器
  */
 @property (nonatomic, readonly, strong) CMMotionManager *manager;
-
-/**
- *  线程队列
- */
-@property (nonatomic, readonly, strong) NSOperationQueue *queue;
-
-/**
- *  更新视图方法的Block
- */
-@property (nonatomic, readonly, copy) void(^deviceMotionBlock)(CGFloat x, CGFloat y , CGFloat z);
 
 /**
  *  开启DeviceMotion
