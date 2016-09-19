@@ -20,7 +20,7 @@
 /**
  *  开启DeviceMotion
  *
- *  @param block 更新视图方法的Block
+ *  @param block 更新视图方法
  */
 - (void)startDeviceMotionWithBlock:(void(^)(CGFloat x, CGFloat y , CGFloat z))block;
 
