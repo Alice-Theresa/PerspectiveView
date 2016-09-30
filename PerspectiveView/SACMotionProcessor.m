@@ -8,11 +8,13 @@
 
 #import "SACMotionProcessor.h"
 
+typedef void(^DeviceMotionBlock)(CGFloat x, CGFloat y , CGFloat z);
+
 @interface SACMotionProcessor ()
 
-@property (nonatomic, readwrite, strong) CMMotionManager  *manager;                                   //Motion管理器
-@property (nonatomic, readwrite, strong) NSOperationQueue *queue;                                     //线程队列
-@property (nonatomic, readwrite, copy  ) void(^deviceMotionBlock)(CGFloat x, CGFloat y , CGFloat z);  //更新视图Block
+@property (nonatomic, readwrite, strong) CMMotionManager   *manager;           //Motion管理器
+@property (nonatomic, readwrite, strong) NSOperationQueue  *queue;             //线程队列
+@property (nonatomic, readwrite, copy  ) DeviceMotionBlock deviceMotionBlock;  //更新视图Block
 
 @end
 
