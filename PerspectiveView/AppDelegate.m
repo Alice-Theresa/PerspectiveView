@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SACPerspectiveView.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,16 @@
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    
+    [[SACPerspectiveView sharedPerspectiveView] disablePerspective];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    [[SACPerspectiveView sharedPerspectiveView] enablePerspective];
 }
 
 @end

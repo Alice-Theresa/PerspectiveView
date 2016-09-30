@@ -19,7 +19,7 @@
     
     [super viewDidLoad];
     
-    SACPerspectiveView *perspectiveView = [[SACPerspectiveView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    SACPerspectiveView *perspectiveView = [SACPerspectiveView sharedPerspectiveView];
     [perspectiveView settingImage:[UIImage imageNamed:@"Image"]];
     //[perspectiveView settingMultiple:1.3];
     //[perspectiveView settingPerspectiveDirection:SACPerspectiveDirectionHorizontalOnly];

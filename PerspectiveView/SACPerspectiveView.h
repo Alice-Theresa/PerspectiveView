@@ -13,12 +13,28 @@
  *  透视方向模式
  */
 typedef NS_ENUM(NSInteger, SACPerspectiveDirection) {
+    
     SACPerspectiveDirectionHorizontalOnly = 0,    //仅水平透视
     SACPerspectiveDirectionVerticalOnly,          //仅垂直透视
     SACPerspectiveDirectionAll                    //全方位透视
 };
 
 @interface SACPerspectiveView : UIView
+
+/**
+ *  获取PerspectiveView对象
+ */
++ (instancetype)sharedPerspectiveView;
+
+/**
+ *  禁止使用init
+ */
+- (instancetype)init NS_UNAVAILABLE;
+
+/**
+ *  禁止使用initWithFrame
+ */
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 /**
  *  设置透视图片
@@ -30,7 +46,7 @@ typedef NS_ENUM(NSInteger, SACPerspectiveDirection) {
 /**
  *  设置放大倍率
  *
- *  @param multiple 默认为1.1倍 范围为1至3倍
+ *  @param multiple 默认为1.1倍 范围为1至2倍
  */
 - (void)settingMultiple:(CGFloat)multiple;
 

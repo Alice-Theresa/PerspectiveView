@@ -19,12 +19,24 @@
 
 @implementation SACPerspectiveView
 
++ (instancetype)sharedPerspectiveView {
+    
+    static id              perspectiveView = nil;
+    static dispatch_once_t onceToken       = 0;
+    
+    dispatch_once(&onceToken, ^{
+        perspectiveView = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    });
+    return perspectiveView;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
         _background           = [[UIImageView alloc] init];
         _multiple             = 1.1;
         _perspectiveDirection = SACPerspectiveDirectionAll;
+        _processor            = [[SACMotionProcessor alloc] init];
         [self addSubview:_background];
     }
     return self;
@@ -40,7 +52,7 @@
 - (void)settingMultiple:(CGFloat)multiple {
     
     //检查放大倍率
-    self.multiple = multiple >= 1 && multiple <=3 ? multiple : 1;
+    self.multiple = multiple >= 1 && multiple <= 2 ? multiple : 1;
     self.background.bounds = CGRectMake(0, 0, self.frame.size.width * self.multiple, self.frame.size.height * self.multiple);
 }
 
@@ -52,7 +64,7 @@
 - (void)enablePerspective {
     
     if (!self.processor.manager.deviceMotionActive) {
-        self.processor = [[SACMotionProcessor alloc] init];
+        
         [self.processor startDeviceMotionWithBlock:^(CGFloat x, CGFloat y, CGFloat z) {
             
             [UIView animateKeyframesWithDuration:0.1
