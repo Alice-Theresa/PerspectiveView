@@ -4,7 +4,11 @@
 
 ![Demo.gif](./Demo.gif)
 
-创建并初始化SACPerspectiveView对象，设置后添加至视图即可
+获取SACPerspectiveView对象，设置后添加至视图即可
+```
++ (instancetype)sharedPerspectiveView
+```
+
 
 设置背景图片
 ```
